@@ -143,7 +143,8 @@ void ElectronDesktopWindowTreeHostWin::OnNativeThemeUpdated(
 }
 
 bool ElectronDesktopWindowTreeHostWin::HandleMouseEvent(ui::MouseEvent* event) {
-  if (event->IsRightMouseButton() && event->type() == ui::EventType::kMousePressed) {
+  if (event->IsRightMouseButton() &&
+      event->type() == ui::EventType::kMousePressed) {
     electron::api::WebContents::SetDisableDraggableRegions(true);
     return false;
   } else {
