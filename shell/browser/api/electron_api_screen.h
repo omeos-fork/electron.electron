@@ -58,6 +58,9 @@ class Screen final : public gin::Wrappable<Screen>,
     return screen_->GetDisplayMatching(match_rect);
   }
 
+  gfx::Point ScreenToDIPPoint(const gfx::PointF& pixel_point);
+  gfx::Point DIPToScreenPoint(const gfx::PointF& dip_point);
+
   // display::DisplayObserver:
   void OnDisplayAdded(const display::Display& new_display) override;
   void OnDisplaysRemoved(const display::Displays& removed_displays) override;
